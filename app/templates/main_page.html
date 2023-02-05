@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+    <div style="margin-top: 150px; margin-left: 250px;">
+    <div class="hello-text" style="font-size: 40px">Hello</div>
+    <div class="all-info" style="font-size: 40px">This is easy chat for fast speaking</div>
+    <div class="registrate" style="font-size: 30px">
+        <form action="/messages" method="post">
+            <input type="text" name="message" placeholder="write some message">
+            <input type="submit" value="send">
+        </form>
+    </div>
+    <div style="font-size: 25px">
+        {% if all_data -%}
+            {% for i in all_data -%}
+                {{nickname}} -- {{i}}<br>
+            {% endfor %}
+        {% else %}
+            This chat is empty
+        {%- endif %}
+    </div>
+    </div>
+</body>
+</html>
